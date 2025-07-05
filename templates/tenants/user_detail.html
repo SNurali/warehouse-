@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>User Details: {{ user_object.username }}</h2>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ user_object.get_full_name }}</h5>
+            <p class="card-text">
+                <strong>Email:</strong> {{ user_object.email }}<br>
+                <strong>Role:</strong> {{ user_object.get_role_display }}<br>
+                <strong>Company:</strong> {{ user_object.company.name }}<br>
+                <strong>Last Login:</strong> {{ user_object.last_login|date:"Y-m-d H:i" }}
+            </p>
+            <a href="{% url 'user_edit' user_object.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'user_list' %}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

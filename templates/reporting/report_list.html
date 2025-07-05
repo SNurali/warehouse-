@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Available Reports</h2>
+    <div class="list-group mt-3">
+        <a href="{% url 'reporting:inventory_report' %}" class="list-group-item list-group-item-action">
+            Inventory Report
+        </a>
+        <a href="{% url 'reporting:sales_report' %}" class="list-group-item list-group-item-action">
+            Sales Report
+        </a>
+        <a href="{% url 'reporting:purchase_report' %}" class="list-group-item list-group-item-action">
+            Purchase Report
+        </a>
+        <a href="{% url 'reporting:movement_report' %}" class="list-group-item list-group-item-action">
+            Stock Movement Report
+        </a>
+        <a href="{% url 'reporting:custom_report' %}" class="list-group-item list-group-item-action">
+            Custom Report
+        </a>
+    </div>
+</div>
+{% endblock %}
